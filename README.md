@@ -4,42 +4,49 @@
 This project aims to classify non-governmental organizations (NGOs) into one of nine categories based on their name and description. The dataset contains information on approximately 8000 NGOs.
 
 ## Project Structure
-The project is divided into two parts:
+The project is divided into different parts:
 
+I. Data Preparation
+- A. Import Libraries and Load Dataset
 
-- Import necessary libraries and read the data from the provided dataset.
+- B. Clean Dataset
+1. Remove Unnecessary Columns
+2. Drop Rows with Missing Values
 
-- Clean the dataset by removing unnecessary columns and dropping rows with missing values.
+II. Data Labeling
+- A. Create Category Dictionary with Keywords
+- B. Add Columns for Keyword Counts
+1. Calculate Keyword Counts per Category
+2. Store Keyword Counts in Columns
 
-- Label the data by creating a dictionary of categories and their corresponding keywords.
+III. Text Preprocessing
+- A. Clean Labels and Remove Stop Words with NLTK
+- B. Add Custom Text Categorizer to SpaCy Pipeline
+- C. Preprocess Data
+1. Remove Stop Words
+2. Add Columns for Predicted Activity Probabilities
+3. Store Probabilities in Columns
 
-- Create new columns in the DataFrame to store the count of keywords in each category.
+IV. Title Processing
+- A. Create Label Titles Dictionary
+- B. Add Columns for Predicted Title Probabilities
+1. Process Titles
+2. Store Probabilities in Columns
 
-- Iterate over the rows of the DataFrame, calculate the count of keywords in each category, and store the results in the corresponding columns.
+V. Sum of Activities
+- A. Add Columns for Sum of Activities per Category
 
-- Load the Spanish language model from SpaCy.
+VI. Classifier Training Preparation
+- A. Remove Unnecessary Columns
+- B. One-hot Encode Target Variable
 
-- Clean the labels and remove stop words from the text using NLTK.
-
-- Add a custom text categorizer to the SpaCy pipeline.
-
-- Preprocess the data by removing stop words and create new columns in the Mexico DataFrame to store the predicted activity probabilities.
-
-- Iterate over the rows of the DataFrame, process the text, and store the probabilities in the corresponding columns.
-
-- Create a dictionary of label titles and add new columns to the DataFrame to store the predicted title probabilities.
-
-- Iterate over the rows of the DataFrame again, process the titles, and store the probabilities in the corresponding columns.
-
-- Create new columns in the DataFrame to store the sum of activities corresponding to each category.
-
-- Prepare the data for training a classifier by removing unnecessary columns and one-hot encoding the target variable.
-
-- Split the data into training and testing sets.
-
-- Train a RandomForestClassifier and evaluate its performance on the test set.
-
-- Train an XGBoost classifier and evaluate its performance on the test set.
+VII. Model Training and Evaluation
+- A. RandomForestClassifier
+1. Train Model
+2. Evaluate Performance on Test Set
+- B. XGBoost Classifier
+1. Train Model
+2. Evaluate Performance on Test Set
 
 # Results
 The RandomForestClassifier obtains an accuracy score of 0.81 and the XGBoost classifier achieves an accuracy score of 0.9302 on the test set.
