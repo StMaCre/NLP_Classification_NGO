@@ -15,13 +15,16 @@ B. Clean Dataset
 
 ### II. Data Labeling
 A. Create Category Dictionary with Keywords
+
 B. Add Columns for Keyword Counts
 - 1. Calculate Keyword Counts per Category
 - 2. Store Keyword Counts in Columns
 
 ### III. Text Preprocessing
 A. Clean Labels and Remove Stop Words with NLTK
+
 B. Add Custom Text Categorizer to SpaCy Pipeline
+
 C. Preprocess Data
 - 1. Remove Stop Words
 - 2. Add Columns for Predicted Activity Probabilities
@@ -38,6 +41,7 @@ A. Add Columns for Sum of Activities per Category
 
 ### VI. Classifier Training Preparation
 A. Remove Unnecessary Columns
+
 B. One-hot Encode Target Variable
 
 ### VII. Model Training and Evaluation
